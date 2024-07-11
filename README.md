@@ -17,7 +17,7 @@
 ##
 
 ### What is DJ Liker?
-DJ Liker is a powerful tool that automates Facebook reactions on your posts, bypasses reCAPTCHA using the Multi-Bot API, and is easy to use and configure. With this tool, you can increase engagement on your Facebook content without having to manually react to each post.
+DJ Liker is a tools that automates Facebook reactions to your posts, bypasses reCAPTCHA using the Multi-Bot API, and is easy to use and configure. With this tools, you can increase likes on your posts. Every 15 minutes you will get 30 reactions.
 
 ### Termux command?
 First you must have the [Termux](https://f-droid.org/repo/com.termux_118.apk) to run this script and for how to use it can be seen on [**Youtube**](https://www.youtube.com/rozhakid). Then you enter this command into termux!
@@ -37,11 +37,11 @@ $ python Run.py
 
 ##
 
+### Why login failed?
+The error when logging in is caused by a problem with your Facebook cookie, because it has been hit by a checkpoint or has expired. You can also solve this problem by changing the User-Agent in the header with your browser's User-Agent so that it doesn't get checkpointed when logging in.
+
 ### When do likes arrive?
 Likes should arrive on your post in less than 5 minutes, if they don't arrive within 5 minutes, maybe there are no users on the service or you entered the wrong post link. Not only this, you also have to ensure that the public likes your posts.
-
-### Captcha bypass error?
-Before using this service you have to change `Key.json` with the apikey that you have and if you have changed it but the error still occurs maybe your credit has run out or the key has expired.
 
 We recommend running the service during the day, so it's quick to bypass recaptcha.
 
@@ -51,8 +51,8 @@ We recommend running the service during the day, so it's quick to bypass recaptc
 - Update the key with your new key value, making sure to format it correctly.
 - Press `Ctrl+X` to exit, then press `Y` to save the changes.
 
-### Why login failed?
-The error when logging in is caused by a problem with your Facebook cookie, because it has been hit by a checkpoint or has expired. You can also solve this problem by changing the User-Agent in the header with your browser's User-Agent so that it doesn't get checkpointed when logging in.
+### Captcha bypass error?
+Before using this service you have to change `Key.json` with the apikey that you have and if you have changed it but the error still occurs maybe your credit has run out or the key has expired.
 
 ##
 ```python
