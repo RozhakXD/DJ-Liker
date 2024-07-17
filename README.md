@@ -20,7 +20,7 @@
 DJ Liker is a modern tools that automates Facebook reactions to your posts, bypasses reCAPTCHA using the Multi-Bot API, and is easy to use and configure. With this tools, you can increase likes on your posts. Every 15 minutes you will get 30 reactions.
 
 ### Termux command?
-First you must have the [Termux](https://f-droid.org/repo/com.termux_118.apk) to run this script and for how to use it can be seen on [**Youtube**](https://www.youtube.com/rozhakid). Then you enter this command into termux!
+First you must have the [Termux](https://f-droid.org/repo/com.termux_118.apk) to run this script and for how to use it can be seen on [**Youtube**](https://youtu.be/6to2jcOC7tw). Then you enter this command into termux!
 ```
 $ apt update -y && apt upgrade -y
 $ pkg install git python-pip
