@@ -51,6 +51,9 @@ We recommend running the service during the day, so it's quick to bypass recaptc
 - Update the key with your new key value, making sure to format it correctly.
 - Press `Ctrl+X` to exit, then press `Y` to save the changes.
 
+### Your post not public?
+There is a problem if an error occurs when sending a like because the post is not public, if this happens then you must use the url `https://m.facebook.com/` do not use a url other than this because it can cause the like to fail to be sent.
+
 ### Captcha bypass error?
 Before using this service you have to change `Key.json` with the apikey that you have and if you have changed it but the error still occurs maybe your credit has run out or the key has expired.
 
