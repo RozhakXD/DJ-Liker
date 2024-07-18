@@ -206,32 +206,36 @@ class BYPASS:
         with requests.Session() as r:
             self.key = json.loads(open('Penyimpanan/Key.json', 'r').read())['MULTI-BOT'] # PLEASE CHANGE IT WITH THE KEY YOU HAVE!
             response = r.get(f'http://api.multibot.in/in.php?key={self.key}&method=userrecaptcha&googlekey={sitekey}&pageurl=https://dj.yogram.net/autolike.php?type=custom')
-            self.status, self.id = str(response.text).split('|')[0], str(response.text).split('|')[1]
-            if 'OK' in str(response.text):
-                while True:
-                    response2 = requests.get(f'http://api.multibot.in/res.php?key={self.key}&id={self.id}')
-                    if 'OK|' in str(response2.text):
-                        printf(f"[bold bright_white]   ──>[bold green] SUCCESSFULLY BYPASS CAPTCHA!             ", end='\r')
-                        time.sleep(1.5)
-                        return (str(response2.text).split('|')[1])
-                    elif 'CAPCHA_NOT_READY' in str(response2.text):
-                        for sleep in range(60, 0, -1):
-                            time.sleep(1.0)
-                            printf(f"[bold bright_white]   ──>[bold white] TUNGGU[bold green] {sleep}[bold white] DETIK                           ", end='\r')
-                        continue
-                    else:
-                        printf(f"[bold bright_white]   ──>[bold yellow] TRY BYPASS CAPTCHA!                  ", end='\r')
-                        time.sleep(1.5)
-                        self.reCAPTCHA(sitekey)
+            if 'ERROR_ZERO_BALANCE' not in str(response.text):
+                self.status, self.id = str(response.text).split('|')[0], str(response.text).split('|')[1]
+                if 'OK' in str(response.text):
+                    while True:
+                        response2 = requests.get(f'http://api.multibot.in/res.php?key={self.key}&id={self.id}')
+                        if 'OK|' in str(response2.text):
+                            printf(f"[bold bright_white]   ──>[bold green] SUCCESSFULLY BYPASS CAPTCHA!             ", end='\r')
+                            time.sleep(1.5)
+                            return (str(response2.text).split('|')[1])
+                        elif 'CAPCHA_NOT_READY' in str(response2.text):
+                            for sleep in range(60, 0, -1):
+                                time.sleep(1.0)
+                                printf(f"[bold bright_white]   ──>[bold white] TUNGGU[bold green] {sleep}[bold white] DETIK                           ", end='\r')
+                            continue
+                        else:
+                            printf(f"[bold bright_white]   ──>[bold yellow] TRY BYPASS CAPTCHA!                  ", end='\r')
+                            time.sleep(1.5)
+                            self.reCAPTCHA(sitekey)
+                else:
+                    printf(f"[bold bright_white]   ──>[bold red] CAPTCHA NOT FOUND!                  ", end='\r')
+                    time.sleep(3.5)
+                    self.reCAPTCHA(sitekey)
             else:
-                printf(f"[bold bright_white]   ──>[bold red] CAPTCHA NOT FOUND!                  ", end='\r')
-                time.sleep(3.5)
-                self.reCAPTCHA(sitekey)
+                printf(Panel(f"[italic red]The credit in your Multibot account has run out, use another key and make sure you have enough credit!", width=59, style="bold bright_white", title="[Zero Blance]"))
+                exit()
 
 if __name__ == '__main__':
     try:
         if os.path.exists("Penyimpanan/Subscribe.json") == False:
-            youtube_url = json.loads(requests.get('https://raw.githubusercontent.com/RozhakXD/DJ-Liker/main/Penyimpanan/Subscribe.json').text)['Link']
+            youtube_url = json.loads(requests.get('https://raw.githubusercontent.com/RozhakXD/TangLike/main/Penyimpanan/Subscribe.json').text)['Link']
             os.system(f'xdg-open {youtube_url}')
             with open('Penyimpanan/Subscribe.json', 'w') as w:
                 w.write(json.dumps({
