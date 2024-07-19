@@ -59,7 +59,7 @@ class DJ_LIKER:
                 data = {
                     f'{self.form_control}': f'{link_postingan}',
                     f'{self.key}': f'{self.value}',
-                    'type': 'HAHA', # LIKE, LOVE, CARE, HAHA, WOW, SAD, ANGRY
+                    'type': f'{type_reaction}', # LIKE, LOVE, CARE, HAHA, WOW, SAD, ANGRY
                     'g-recaptcha-response': f'{BYPASS().reCAPTCHA(sitekey=self.sitekey)}',
                     f'{self.type_submit}': 'Submit',
                 }
